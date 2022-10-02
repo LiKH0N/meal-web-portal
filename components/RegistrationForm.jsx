@@ -152,7 +152,7 @@ export default function Registration() {
       </Button>
       <Typography>
         <Link href="/login">
-          <a>একাউন্ট আছে?</a>
+          <a>একাউন্ট এ প্রবেশ করুন</a>
         </Link>
       </Typography>
       <Backdrop open={open}>

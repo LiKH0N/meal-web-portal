@@ -14,11 +14,19 @@ handler.post(async (req, res) => {
         `আপনার এই ${req.body.phone} নম্বর টি অন্য একটি একাউন্টের সাথে যুক্ত আছে! আপনি পুরাতন একাউন্টি ডিলেট করে আবার নতুন মাসের জন্য একাউন্ট খুলতে পারবেন।ধন্যবাদ।`
       );
     }
-    await prisma.manager.create({
+
+    const manager = await prisma.manager.create({
       data: {
         name: req.body.name,
         phone: req.body.phone,
         password: bcryptjs.hashSync(req.body.password, 10),
+      },
+    });
+
+    await prisma.person.create({
+      data: {
+        name: req.body.name,
+        authorId: manager.id,
       },
     });
     res.send("আপনার একাউন্টি সঠিকভাবে তৈরী করা হয়েছে!");
