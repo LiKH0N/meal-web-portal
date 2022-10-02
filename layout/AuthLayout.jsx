@@ -7,7 +7,7 @@ export default function DashboardLayout({ children, pageTitle }) {
       <Head>
         <title>{pageTitle ? pageTitle : "Meal Web Portal"}</title>
       </Head>
-      <main>
+      <main style={{padding:"0px 5px"}}>
         <Container
         maxWidth="xs"
         sx={{
