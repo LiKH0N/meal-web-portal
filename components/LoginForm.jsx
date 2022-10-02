@@ -1,4 +1,4 @@
-import { Button, Container, Divider, Stack, TextField, Typography } from "@mui/material";
+import { Backdrop, Button, Divider, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Link from "next/link";
@@ -6,16 +6,20 @@ import axios from "axios";
 import { writeStorage } from "@rehooks/local-storage";
 import Swal from "sweetalert2";
 import Cookies from "js-cookie";
+import { FadeLoader } from "react-spinners";
 import { useRouter } from "next/router";
 export default function Login() {
+  const [open, setOpen] = useState(false);
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
   const router = useRouter();
   const loginHandler = async (e) => {
     e.preventDefault();
+    setOpen(true)
     const { data } = await axios.post(
       `/api/auth/login?phone=${phone}&password=${password}`
     );
+    setOpen(false)
     if (phone.localeCompare(data.phone) == 0) {
       writeStorage("mealUserInfo", data);
       Cookies.set("token", data.token);
@@ -72,6 +76,9 @@ export default function Login() {
           <a>নতুন একাউন্ট তৈরী করুন</a>
         </Link>
       </Typography>
+      <Backdrop open={open} >
+        <FadeLoader color="#FFA610"/>
+      </Backdrop>
     </Stack>
   );
 }

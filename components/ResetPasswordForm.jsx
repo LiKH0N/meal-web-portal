@@ -1,21 +1,23 @@
-import { Button, Container, Divider, Stack, TextField, Typography } from "@mui/material";
+import { Backdrop, Button, Divider, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Link from "next/link";
 import axios from "axios";
-import { writeStorage } from "@rehooks/local-storage";
+import { FadeLoader } from "react-spinners";
 import Swal from "sweetalert2";
-import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 export default function Login() {
+  const [open, setOpen] = useState(false);
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
   const router = useRouter();
   const loginHandler = async (e) => {
     e.preventDefault();
+    setOpen(true);
     const { data } = await axios.put(
       `/api/auth/resetPassword?phone=${phone}&password=${password}`
     );
+    setOpen(false);
     if (data == "আপনার পাসওয়ার্ডটি সঠিকভাবে পরিবর্তন করা হয়েছে!") {
       Swal.fire("Success", data, "success");
     } else if (data == "কোন একাউন্ট খুজে পাওয়া যাইনি") {
@@ -69,6 +71,9 @@ export default function Login() {
           <a>একাউন্ট এ প্রবেশ করুন</a>
         </Link>
       </Typography>
+      <Backdrop open={open} >
+        <FadeLoader color="#FFA610"/>
+      </Backdrop>
     </Stack>
   );
 }

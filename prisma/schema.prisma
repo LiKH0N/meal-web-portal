@@ -3,13 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
-  
+  provider = "mongodb"
+  url      = env("DATABASE_URL") 
 }
 
 model Manager{
-  id String @id  @unique @default(cuid())
+  id   String  @id @default(auto()) @map("_id") @db.ObjectId
   name String
   phone String @unique
   password String
@@ -28,7 +27,7 @@ model Manager{
 
 
 model Person {
-  id String @id @unique @default(cuid())
+  id   String  @id @default(auto()) @map("_id") @db.ObjectId
   name String
   mealCount Int @default(0)
   joma Int @default(0)

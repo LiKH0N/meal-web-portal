@@ -1,10 +1,19 @@
-import { Button, Divider, Stack, TextField, Typography } from "@mui/material";
+import {
+  Backdrop,
+  Button,
+  Divider,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Link from "next/link";
+import { FadeLoader } from "react-spinners";
 export default function Registration() {
+  const [open, setOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: "",
     phone: "",
@@ -29,11 +38,13 @@ export default function Registration() {
         allowOutsideClick: false,
       }).then(async (result) => {
         if (result.isConfirmed) {
+          setOpen(true);
           const { data } = await axios.post(`/api/auth/registration`, {
             name: userInfo.name,
             phone: userInfo.phone,
             password: userInfo.password,
           });
+          setOpen(false);
           if (data == "আপনার একাউন্টি সঠিকভাবে তৈরী করা হয়েছে!") {
             e.target.reset();
             Swal.fire({
@@ -126,6 +137,9 @@ export default function Registration() {
           <a>একাউন্ট আছে?</a>
         </Link>
       </Typography>
+      <Backdrop open={open} >
+        <FadeLoader color="#FFA610"/>
+      </Backdrop>
     </Stack>
   );
 }
