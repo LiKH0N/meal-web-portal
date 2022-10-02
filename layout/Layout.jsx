@@ -2,6 +2,7 @@ import {Container } from "@mui/material";
 import Head from "next/head";
 import React from "react";
 import Options from "../components/Options";
+import Contact from "../components/Contact";
 export default function Layout({ children, pageTitle }) {
   return (
     <>
@@ -26,7 +27,7 @@ export default function Layout({ children, pageTitle }) {
     
       </main>
       <Options />
-      {/* <Contact/> */}
+      <Contact/>
     </>
   );
 }
