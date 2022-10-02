@@ -62,7 +62,7 @@ export default function Registration() {
     <Stack component="form" onSubmit={registrationHandler} spacing={2}>
       <Typography
         align="center"
-        sx={{ fontSize: "30px", fontWeight: 900, color: "#FFFFFF" }}
+        sx={{ fontSize: "30px", fontWeight: 900, color: "black" }}
       >
         Meal Web Portal
       </Typography>
@@ -124,11 +124,6 @@ export default function Registration() {
       <Typography>
         <Link href="/login">
           <a>একাউন্ট আছে?</a>
-        </Link>
-      </Typography>
-      <Typography>
-        <Link href="/login">
-          <a>একাউন্ট এ প্রবেশ করুন</a>
         </Link>
       </Typography>
     </Stack>

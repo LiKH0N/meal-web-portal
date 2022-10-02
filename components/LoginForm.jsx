@@ -28,7 +28,7 @@ export default function Login() {
     <Stack component="form" onSubmit={loginHandler} spacing={2}>
       <Typography
         align="center"
-        sx={{ fontSize: "30px", fontWeight: 900, color: "#FFFFFF" }}
+        sx={{ fontSize: "30px", fontWeight: 900, color: "black" }}
       >
         Meal Web Portal
       </Typography>
