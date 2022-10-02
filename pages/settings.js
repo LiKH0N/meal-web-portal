@@ -3,7 +3,7 @@ import Settings from "../components/Settings";
 import Layout from "../layout/Layout";
 export default function Index() {
   return (
-    <Layout pageTitle="Cost entry">
+    <Layout pageTitle="Settings">
       <Settings />
     </Layout>
   );

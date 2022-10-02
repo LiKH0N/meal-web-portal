@@ -23,7 +23,7 @@ export default function Index() {
     );
   }
   return (
-    <Layout pageTitle="View meal table">
+    <Layout pageTitle="Welcome to meal web portal">
       <Home data={data} />
     </Layout>
   );

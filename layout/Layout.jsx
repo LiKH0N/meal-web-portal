@@ -7,7 +7,7 @@ export default function Layout({ children, pageTitle }) {
   return (
     <>
       <Head>
-        <title>{pageTitle ? pageTitle : "Meal Web Portal"}</title>
+        <title>{pageTitle ? pageTitle + " | Meal Web Portal" : "Meal Web Portal"}</title>
       </Head>
       <main style={{ padding: "0px 10px" }}>
         <Container
