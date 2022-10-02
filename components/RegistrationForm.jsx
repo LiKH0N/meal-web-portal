@@ -1,11 +1,4 @@
-import {
-  Button,
-  Container,
-  Divider,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, Divider, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Swal from "sweetalert2";
@@ -24,39 +17,46 @@ export default function Registration() {
 
   const registrationHandler = (e) => {
     e.preventDefault();
-
-    Swal.fire({
-      title: "আপনি কি সিউর?",
-      text: "আপনি কি একাউন্টি তৈরী করতে চাচ্ছেন",
-      icon: "question",
-      showCancelButton: true,
-      confirmButtonText: "Yes",
-      showLoaderOnConfirm: true,
-      reverseButtons: true,
-      allowOutsideClick: false,
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        const { data } = await axios.post(`/api/auth/registration`, {
-          name: userInfo.name,
-          phone: userInfo.phone,
-          password: userInfo.password,
-        });
-        if (data == "আপনার একাউন্টি সঠিকভাবে তৈরী করা হয়েছে!") {
-          e.target.reset();
-          Swal.fire({
-            title: "Success",
-            text: data,
-            icon: "success",
+    if (userInfo.confirmPassword == userInfo.password) {
+      Swal.fire({
+        title: "আপনি কি সিউর?",
+        text: "আপনি কি একাউন্টি তৈরী করতে চাচ্ছেন",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Yes",
+        showLoaderOnConfirm: true,
+        reverseButtons: true,
+        allowOutsideClick: false,
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          const { data } = await axios.post(`/api/auth/registration`, {
+            name: userInfo.name,
+            phone: userInfo.phone,
+            password: userInfo.password,
           });
-        } else {
-          Swal.fire({
-            title: "Oppos...!",
-            text: data,
-            icon: "error",
-          });
+          if (data == "আপনার একাউন্টি সঠিকভাবে তৈরী করা হয়েছে!") {
+            e.target.reset();
+            Swal.fire({
+              title: "Success",
+              text: data,
+              icon: "success",
+            });
+          } else {
+            Swal.fire({
+              title: "Oppos...!",
+              text: data,
+              icon: "error",
+            });
+          }
         }
-      }
-    });
+      });
+    } else {
+      Swal.fire({
+        title: "Oppos...!",
+        text: "আপনি পাসওয়ার্ড সঠিকভাবে লিখেন নি",
+        icon: "error",
+      });
+    }
   };
   return (
     <Stack component="form" onSubmit={registrationHandler} spacing={2}>
@@ -124,6 +124,11 @@ export default function Registration() {
       <Typography>
         <Link href="/login">
           <a>একাউন্ট আছে?</a>
+        </Link>
+      </Typography>
+      <Typography>
+        <Link href="/login">
+          <a>একাউন্ট এ প্রবেশ করুন</a>
         </Link>
       </Typography>
     </Stack>

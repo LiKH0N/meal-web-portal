@@ -18,11 +18,13 @@ export default function Setting() {
   const [mealUserInfo] = useLocalStorage("mealUserInfo");
   const router = useRouter();
   function deleteAccount() {
-    Swal.fire(
-      "অপনি কি নিশ্চিত?",
-      "আপনার আকাউন্ট ডিলিট করে ফেলতে চাচ্ছেন।",
-      "question"
-    ).then(async (result) => {
+    Swal.fire({
+      title:"অপনি কি নিশ্চিত?",
+      text:"আপনার আকাউন্ট ডিলিট করে ফেলতে চাচ্ছেন।",
+      icon: "question",
+      showCancelButton: true,
+      reverseButtons:true
+    }).then(async (result) => {
       if (result.isConfirmed) {
         const { data } = await axios.delete(
           `/api/manage/deleteAccount?id=${
