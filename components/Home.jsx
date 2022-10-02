@@ -24,10 +24,11 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { useRouter } from "next/router";
+import { useLocalStorage } from "@rehooks/local-storage";
 export default function View({ data }) {
   const [open, setOpen] = React.useState(false);
+  const [mealUserInfo] = useLocalStorage("mealUserInfo");
   const [peopleList, setPeopleList] = React.useState(data.persons);
-  const ref = React.createRef();
   const router = useRouter();
   const searchUser = (userName) => {
     if (userName == " ") {
@@ -77,54 +78,63 @@ export default function View({ data }) {
 
   return (
     <>
+      <Typography
+        sx={{
+          textAlign: "center",
+          fontSize: "30px",
+          fontWeight: 800,
+          mt: "13px",
+        }}
+      >
+        মিলের হিসাব
+      </Typography>
+      <Typography
+        sx={{
+          textAlign: "center",
+          color: "gray",
+        }}
+      >
+        Account: {mealUserInfo ? mealUserInfo.phone : null}
+      </Typography>
+      <Typography
+        sx={{
+          textAlign: "center",
+          color: "gray",
+        }}
+      >
+        Month: {moment(data.whichMonth).format("MMM Do YY")}
+      </Typography>
+      <Divider sx={{ mt: "15px" }}></Divider>
+      <Stack
+        direction={{ xs: "colunm", sm: "row", md: "row" }}
+        spacing={1}
+        justifyContent="space-between"
+        alignItems={{ xs: "flex-start", sm: "center", md: "center" }}
+        sx={{ my: "10px" }}
+      >
+        <Typography>মোট জমাঃ {data.joma}</Typography>
+        <Typography>বাজারঃ {data.bajar}</Typography>
+        <Typography>ব্যালেন্সঃ {data.joma - data.bajar}</Typography>
+        <Typography>
+          মিল রেটঃ {data.mealRate ? data.mealRate.toFixed(2) : 0}
+        </Typography>
+        <Link href="meal-entry">
+          <Button
+            size="small"
+            endIcon={<NoteAltIcon />}
+            variant="contained"
+            color="btnColor"
+            component="a"
+          >
+            মিল
+          </Button>
+        </Link>
+      </Stack>
+
+      <FilterByName data={data.persons} searchUser={searchUser} />
+
+      <Divider sx={{ mt: "10px" }}></Divider>
       <TableContainer>
-        <Typography
-          sx={{
-            textAlign: "center",
-            fontSize: "30px",
-            fontWeight: 800,
-            mt: "13px",
-          }}
-        >
-          মিলের হিসাব
-        </Typography>
-        <Typography
-          sx={{
-            textAlign: "center",
-            color: "gray",
-          }}
-        >
-          {moment(data.whichMonth).format("MMM Do YY")}
-        </Typography>
-        <Stack
-          direction={{xs:"colunm",sm:"row",md:"row"}}
-          spacing={1}
-          justifyContent="space-between"
-          alignItems={{xs:"flex-start",sm:"center",md:"center"}}
-          sx={{ my: "10px" }}
-        >
-          <Typography>মোট জমাঃ {data.joma}</Typography>
-          <Typography>বাজারঃ {data.bajar}</Typography>
-          <Typography>ব্যালেন্সঃ {data.joma - data.bajar}</Typography>
-          <Typography>
-            মিল রেটঃ {data.mealRate ? data.mealRate.toFixed(2) : 0}
-          </Typography>
-          <Link href="meal-entry">
-            <Button
-              size="small"
-              endIcon={<NoteAltIcon />}
-              variant="contained"
-              color="btnColor"
-              component="a"
-            >
-              মিল
-            </Button>
-          </Link>
-        </Stack>
-
-        <FilterByName data={data.persons} searchUser={searchUser} />
-
-        <Divider sx={{ mt: "10px" }}></Divider>
         <Table>
           <TableHead>
             <TableRow>
