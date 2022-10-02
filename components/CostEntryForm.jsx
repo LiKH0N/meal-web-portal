@@ -67,7 +67,7 @@ export default function CostEntryForm({ managerId }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="টাকার পরিমান লেখুন"
+        placeholder="টাকার পরিমান লিখুন"
         required
         InputProps={{ disableUnderline: true }}
         onChange={(e) => setAmount(e.target.value)}

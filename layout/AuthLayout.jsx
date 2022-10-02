@@ -7,7 +7,7 @@ export default function DashboardLayout({ children, pageTitle }) {
     <React.Fragment>
       <Head>
         <title>
-          {pageTitle ? pageTitle + "| Meal Web Portal" : "Meal Web Portal"}
+          {pageTitle ? pageTitle + " | Meal Web Portal" : "Meal Web Portal"}
         </title>
       </Head>
       <main style={{ padding: "0px 5px" }}>

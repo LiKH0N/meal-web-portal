@@ -113,7 +113,7 @@ export default function Registration() {
         size="large"
         variant="standard"
         type="Number"
-        placeholder="আপনার ফোন নম্বরটি লেখুন"
+        placeholder="আপনার ফোন নম্বরটি লিখুন"
         required
         name="phone"
         InputProps={{ disableUnderline: true }}
@@ -138,7 +138,7 @@ export default function Registration() {
         size="large"
         variant="standard"
         type="password"
-        placeholder="পাসওয়ার্ডটি আবার লেখুন"
+        placeholder="পাসওয়ার্ডটি আবার লিখুন"
         required
         name="confirmPassword"
         InputProps={{

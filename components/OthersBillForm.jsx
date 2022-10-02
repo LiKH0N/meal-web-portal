@@ -87,7 +87,7 @@ export default function AddPersonForm({ data }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="কারেন্ট বিল লেখুন(যদি থাকে)"
+        placeholder="কারেন্ট বিল লিখুন(যদি থাকে)"
         required
         name="electricityBill"
         InputProps={{ disableUnderline: true }}
@@ -98,7 +98,7 @@ export default function AddPersonForm({ data }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="গ্যাস বিল লেখুন(যদি থাকে)"
+        placeholder="গ্যাস বিল লিখুন(যদি থাকে)"
         required
         name="gasBill"
         InputProps={{ disableUnderline: true }}
@@ -109,7 +109,7 @@ export default function AddPersonForm({ data }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="পানি বিল লেখুন(যদি থাকে)"
+        placeholder="পানি বিল লিখুন(যদি থাকে)"
         required
         name="waterBill"
         InputProps={{ disableUnderline: true }}
@@ -120,7 +120,7 @@ export default function AddPersonForm({ data }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="পেপার বিল লেখুন(যদি থাকে)"
+        placeholder="পেপার বিল লিখুন(যদি থাকে)"
         required
         name="paperBill"
         InputProps={{ disableUnderline: true }}
@@ -131,7 +131,7 @@ export default function AddPersonForm({ data }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="ময়লা বিল লেখুন(যদি থাকে)"
+        placeholder="ময়লা বিল লিখুন(যদি থাকে)"
         required
         name="moylaBill"
         InputProps={{ disableUnderline: true }}
@@ -142,7 +142,7 @@ export default function AddPersonForm({ data }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="অন্যান খরচ লেখুন(যদি থাকে)"
+        placeholder="অন্যান খরচ লিখুন(যদি থাকে)"
         required
         name="othersBill"
         InputProps={{ disableUnderline: true }}

@@ -44,7 +44,7 @@ export default function Login() {
         size="large"
         variant="standard"
         type="tel"
-        placeholder="আপনার ফোন নম্বরটি লেখুন"
+        placeholder="আপনার ফোন নম্বরটি লিখুন"
         required
         InputProps={{ disableUnderline: true }}
         onChange={(e) => setPhone(e.target.value)}
@@ -54,7 +54,7 @@ export default function Login() {
         size="large"
         variant="standard"
         type="password"
-        placeholder="নতুন একটি পাসওয়ার্ড লেখুন"
+        placeholder="নতুন একটি পাসওয়ার্ড লিখুন"
         required
         InputProps={{
           endAdornment: <VisibilityOffIcon />,

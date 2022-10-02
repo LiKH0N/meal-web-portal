@@ -76,7 +76,7 @@ export default function UpdateMemberForm({ id, name, joma, mealCount }) {
         size="large"
         variant="standard"
         type="number"
-        placeholder="মোট মিল লেখুন"
+        placeholder="মোট মিল লিখুন"
         
         value={updateInfo.mealCount}
         name="mealCount"
@@ -90,7 +90,7 @@ export default function UpdateMemberForm({ id, name, joma, mealCount }) {
         type="number"
         value={updateInfo.joma}
         name="joma"
-        placeholder="মোট টাকা লেখুন"
+        placeholder="মোট টাকা লিখুন"
         
         InputProps={{ disableUnderline: true }}
         onChange={inputHandler}

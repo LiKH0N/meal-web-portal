@@ -44,7 +44,7 @@ export default function Login() {
         size="large"
         variant="standard"
         type="tel"
-        placeholder="ফোন নম্বরটি লেখুন"
+        placeholder="ফোন নম্বরটি লিখুন"
         required
         InputProps={{ disableUnderline: true }}
         onChange={(e) => setPhone(e.target.value)}
@@ -54,7 +54,7 @@ export default function Login() {
         size="large"
         variant="standard"
         type="password"
-        placeholder="পাসওয়ার্ড লেখুন"
+        placeholder="পাসওয়ার্ড লিখুন"
         required
         InputProps={{
           endAdornment: <VisibilityOffIcon />,
@@ -68,7 +68,7 @@ export default function Login() {
       </Button>
       <Typography>
         <Link href="reset-your-password">
-          <a>পাসওয়ার্ড ভোলে গেছেন?</a>
+          <a>পাসওয়ার্ড ভুলে গেছেন?</a>
         </Link>
       </Typography>
       <Typography>
