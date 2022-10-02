@@ -26,7 +26,31 @@ export default function Registration() {
 
   const registrationHandler = (e) => {
     e.preventDefault();
-    if (userInfo.confirmPassword == userInfo.password) {
+    if (userInfo.name.length < 3) {
+      Swal.fire({
+        title: "Oppos...!",
+        text: "আপনার নাম কমপক্ষে তিন অক্ষরের হতে হবে",
+        icon: "error",
+      });
+    } else if (userInfo.phone.length != 11) {
+      Swal.fire({
+        title: "Oppos...!",
+        text: "আপনি একটি ভুল ফোন নম্বর দিয়েছেন",
+        icon: "error",
+      });
+    } else if (userInfo.password.length < 6) {
+      Swal.fire({
+        title: "Oppos...!",
+        text: "আপনার পাসওয়ার্ড কমপক্ষে ছয় অক্ষরের হতে হবে",
+        icon: "error",
+      });
+    } else if (userInfo.confirmPassword != userInfo.password) {
+      Swal.fire({
+        title: "Oppos...!",
+        text: "দ্বিতিয় বার পাসওয়ার্ড সঠিকভাবে লিখেন নি",
+        icon: "error",
+      });
+    } else {
       Swal.fire({
         title: "আপনি কি সিউর?",
         text: "আপনি কি একাউন্টি তৈরী করতে চাচ্ছেন",
@@ -60,12 +84,6 @@ export default function Registration() {
             });
           }
         }
-      });
-    } else {
-      Swal.fire({
-        title: "Oppos...!",
-        text: "আপনি পাসওয়ার্ড সঠিকভাবে লিখেন নি",
-        icon: "error",
       });
     }
   };
@@ -137,8 +155,8 @@ export default function Registration() {
           <a>একাউন্ট আছে?</a>
         </Link>
       </Typography>
-      <Backdrop open={open} >
-        <FadeLoader color="#FFA610"/>
+      <Backdrop open={open}>
+        <FadeLoader color="#FFA610" />
       </Backdrop>
     </Stack>
   );
