@@ -4,7 +4,7 @@ import AuthLayout from "../layout/AuthLayout";
 export default function Index() {
   return (
     <AuthLayout pageTitle="Registration">
-      <Registration />;
+      <Registration />
     </AuthLayout>
   );
 }

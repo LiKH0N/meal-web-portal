@@ -18,7 +18,7 @@ export default function Index() {
   if (!data) {
     return (
       <Layout pageTitle="Loading...">
-        <Loading />;
+        <Loading />
       </Layout>
     );
   }

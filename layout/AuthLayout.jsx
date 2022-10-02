@@ -1,6 +1,7 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Head from "next/head";
 import React from "react";
+import CountUp from "react-countup";
 export default function DashboardLayout({ children, pageTitle }) {
   return (
     <React.Fragment>
@@ -22,6 +23,9 @@ export default function DashboardLayout({ children, pageTitle }) {
           {children}
         </Container>
       </main>
+      {/* <Typography textAlign="center">
+        <CountUp delay={2} end={3067} />
+      </Typography> */}
     </React.Fragment>
   );
 }

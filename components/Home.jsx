@@ -97,10 +97,10 @@ export default function View({ data }) {
           {moment(data.whichMonth).format("MMM Do YY")}
         </Typography>
         <Stack
-          direction="row"
+          direction={{xs:"colunm",sm:"row",md:"row"}}
           spacing={1}
           justifyContent="space-between"
-          alignItems="center"
+          alignItems={{xs:"flex-start",sm:"center",md:"center"}}
           sx={{ my: "10px" }}
         >
           <Typography>মোট জমাঃ {data.joma}</Typography>
