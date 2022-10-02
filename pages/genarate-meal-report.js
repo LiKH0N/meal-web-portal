@@ -1,6 +1,6 @@
 import React from "react";
 import useSWR from "swr";
-import Home from "../components/Home";
+import PdfCom from "../components/PdfCom";
 import Loading from "../components/Loading";
 import Layout from "../layout/Layout";
 import axios from "axios";
@@ -9,7 +9,7 @@ const getPersonList = (url) => axios.get(url).then((res) => res.data);
 export default function Index() {
   const [mealUserInfo] = useLocalStorage("mealUserInfo");
   const { data, error } = useSWR(
-    `/api/manage/getDeshboardInfo?userPhone=${
+    `/api/manage/getPdfInfo?userPhone=${
       mealUserInfo ? mealUserInfo.phone : null
     }`,
     getPersonList
@@ -18,13 +18,13 @@ export default function Index() {
   if (!data) {
     return (
       <Layout pageTitle="Loading...">
-        <Loading />;
+        <Loading />
       </Layout>
     );
   }
   return (
-    <Layout pageTitle="View meal table">
-      <Home data={data} />
+    <Layout pageTitle="Meal report">
+      <PdfCom data={data} />
     </Layout>
   );
 }

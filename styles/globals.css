@@ -1,26 +1,13 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+* {
+  margin: 0px;
+  padding: 0px;
 }
-
-a {
-  color: inherit;
+a{
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
+.styleTextField {
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 6px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}

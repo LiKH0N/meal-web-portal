@@ -1,6 +1,6 @@
 import React from "react";
 import useSWR from "swr";
-import Home from "../components/Home";
+import MealEntryForm from "../components/MealEntryForm";
 import Loading from "../components/Loading";
 import Layout from "../layout/Layout";
 import axios from "axios";
@@ -23,8 +23,8 @@ export default function Index() {
     );
   }
   return (
-    <Layout pageTitle="View meal table">
-      <Home data={data} />
+    <Layout pageTitle="Meal entry">
+      <MealEntryForm data={data.persons} />
     </Layout>
   );
 }

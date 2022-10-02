@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+  
+}
+
+model Manager{
+  id String @id  @unique @default(cuid())
+  name String
+  phone String @unique
+  password String
+  bajar Int @default(0)
+  buyaBill Int @default(0)
+  electricityBill Int @default(0)
+  gasBill Int @default(0)
+  moylaBill Int @default(0)
+  waterBill Int @default(0)
+  paperBill Int @default(0)
+  othersBill Int @default(0)
+  persons Person[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Person {
+  id String @id @unique @default(cuid())
+  name String
+  mealCount Int @default(0)
+  joma Int @default(0)
+  author Manager @relation(fields: [authorId], references: [id],onDelete: Cascade)
+  authorId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

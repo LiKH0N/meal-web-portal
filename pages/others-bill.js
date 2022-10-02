@@ -1,18 +1,18 @@
 import React from "react";
 import useSWR from "swr";
-import Home from "../components/Home";
+import OthersBillForm from "../components/OthersBillForm";
 import Loading from "../components/Loading";
 import Layout from "../layout/Layout";
 import axios from "axios";
 import { useLocalStorage } from "@rehooks/local-storage";
-const getPersonList = (url) => axios.get(url).then((res) => res.data);
+const getOthersBillInfo = (url) => axios.get(url).then((res) => res.data);
 export default function Index() {
   const [mealUserInfo] = useLocalStorage("mealUserInfo");
   const { data, error } = useSWR(
-    `/api/manage/getDeshboardInfo?userPhone=${
+    `/api/manage/getOthersBillInfo?userPhone=${
       mealUserInfo ? mealUserInfo.phone : null
     }`,
-    getPersonList
+    getOthersBillInfo
   );
 
   if (!data) {
@@ -23,8 +23,8 @@ export default function Index() {
     );
   }
   return (
-    <Layout pageTitle="View meal table">
-      <Home data={data} />
+    <Layout pageTitle="Others utility bill">
+      <OthersBillForm data={data} />
     </Layout>
   );
 }
