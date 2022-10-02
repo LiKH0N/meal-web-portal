@@ -5,7 +5,7 @@ import { red } from "@mui/material/colors";
 const theme = createTheme({
   palette: {
     background: {
-      default: "#FFFFFF",
+      default: "#FFA610",
     },
     btnColor: {
       main: "#FF9D14",

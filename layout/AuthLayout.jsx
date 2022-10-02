@@ -14,7 +14,7 @@ export default function DashboardLayout({ children, pageTitle }) {
           background: "#28AAE1",
           p: "20px",
           borderRadius: "10px",
-          border: "1px solid #ccc",
+          border: "1px solid #28AAE1",
           boxShadow: "0 1px 4px 0 rgb(0 0 0 / 50%)",
           my: "50px",
         }}

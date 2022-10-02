@@ -177,7 +177,7 @@ export default function AddPersonForm({ data }) {
           padding: "20px 10px",
           background: "#FFFFFF",
           borderRadius: "10px",
-          borderTop: "3px solid #34A853",
+          borderTop: "3px solid #FF9D14",
         }}
       >
         <Divider>
