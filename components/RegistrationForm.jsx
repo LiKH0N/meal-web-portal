@@ -112,7 +112,7 @@ export default function Registration() {
         className="styleTextField"
         size="large"
         variant="standard"
-        type="tel"
+        type="Number"
         placeholder="আপনার ফোন নম্বরটি লেখুন"
         required
         name="phone"
