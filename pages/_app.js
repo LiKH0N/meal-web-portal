@@ -26,10 +26,22 @@ export default function MyApp(props) {
             style={{ width: "80%", margin: "auto", marginTop: "20px" }}
           >
             আপনার ডাটা আমাদের কাছে সম্পুর্ন ভাবে নিরাপদে থাকবে। তাই, আপনি কোন
-            প্রকার দুশ্চিন্তা না করে আজ থেকে এখানেই মিলের সকল হিসাব রাখুন।
-             এটি সম্পুর্ন ফ্রি!
+            প্রকার দুশ্চিন্তা না করে আজ থেকে এখানেই মিলের সকল হিসাব রাখুন। এটি
+            সম্পুর্ন ফ্রি!
           </Marquee>
           <Component {...pageProps} />
+          <div style={{ textAlign: "center" }}>
+            <h2>কিভাবে সিস্টেমটি ব্যবহার করবেন।</h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/OZapHQmGRko"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </ThemeProvider>
     </CacheProvider>
