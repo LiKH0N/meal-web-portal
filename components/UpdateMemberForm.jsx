@@ -37,6 +37,10 @@ export default function UpdateMemberForm({ id, name, joma, mealCount }) {
             title: "Success",
             text: data,
             icon: "success",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              router.reload(window.location.pathname);
+            }
           });
         } else {
           Swal.fire({
@@ -65,7 +69,6 @@ export default function UpdateMemberForm({ id, name, joma, mealCount }) {
         variant="standard"
         type="text"
         placeholder="নাম লিখুন"
-        
         name="name"
         InputProps={{ disableUnderline: true }}
         onChange={inputHandler}
@@ -77,7 +80,6 @@ export default function UpdateMemberForm({ id, name, joma, mealCount }) {
         variant="standard"
         type="number"
         placeholder="মোট মিল লিখুন"
-        
         value={updateInfo.mealCount}
         name="mealCount"
         InputProps={{ disableUnderline: true }}
@@ -91,7 +93,6 @@ export default function UpdateMemberForm({ id, name, joma, mealCount }) {
         value={updateInfo.joma}
         name="joma"
         placeholder="মোট টাকা লিখুন"
-        
         InputProps={{ disableUnderline: true }}
         onChange={inputHandler}
       />

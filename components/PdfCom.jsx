@@ -41,19 +41,27 @@ export default function PdfCom({ data }) {
           )}
         </Pdf>
       </div>
-      <div ref={ref} style={{ padding: "20px" }}>
+      <div
+        ref={ref}
+        style={{ paddingLeft: "10px", width: "780px" }}
+      >
         <Typography
-          sx={{ fontSize: "30px", fontWeight: 900, textAlign: "center" }}
+          sx={{ fontSize: "30px", fontWeight: 900, textAlign: "center",pt:"20px" }}
         >
           Meal Report
         </Typography>
         <Typography
-          sx={{ color: "gray", fontWeight: 900, textAlign: "center",mb:"5px" }}
+          sx={{
+            color: "gray",
+            fontWeight: 900,
+            textAlign: "center",
+            mb: "5px",
+          }}
         >
           Month: {moment(data.createdAt).format("MMM Do YY")}
         </Typography>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} size="small">
+        <TableContainer sx={{border:"1px solid #ccc",borderRadius:"4px",mt:"20px"}}>
+          <Table size="small" sx={{ pl: "50px" }}>
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
@@ -77,51 +85,53 @@ export default function PdfCom({ data }) {
                   </TableCell>
                   <TableCell>{row.joma}</TableCell>
                   <TableCell>{row.mealCount}</TableCell>
-                  <TableCell>{data.mealRate}</TableCell>
+                  <TableCell>{data.mealRate.toFixed(2)}</TableCell>
                   <TableCell>
                     {(row.mealCount * data.mealRate).toFixed(2)}
                   </TableCell>
                   <TableCell>{data.buyaBillEachPerson.toFixed(2)}</TableCell>
                   <TableCell>{data.utilityBillEachPerson.toFixed(2)}</TableCell>
                   <TableCell>
-                  {(
-                    row.joma -
-                    row.mealCount * data.mealRate -
-                    (data.buyaBillEachPerson + data.utilityBillEachPerson)
-                  ).toFixed(2)}
+                    {(
+                      row.joma -
+                      row.mealCount * data.mealRate -
+                      (data.buyaBillEachPerson + data.utilityBillEachPerson)
+                    ).toFixed(2)}
                   </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-        <Stack spacing={1} sx={{ mt: "100px" }}>
+        <Stack spacing={1} sx={{ mt: "50px" }}>
           <Typography sx={{ fontWeight: 900, color: "gray" }}>
             Details Information
           </Typography>
-          <Divider></Divider>
+          <Divider sx={{width:"150px"}}></Divider>
           <Typography>Total member: {data.persons.length} tk</Typography>
           <Typography>Total collect: {data.joma} tk</Typography>
-          <Typography>Meal rate: {data.mealRate?data.mealRate.toFixed(2):0} tk</Typography>
+          <Typography>
+            Meal rate: {data.mealRate ? data.mealRate.toFixed(2) : 0} tk
+          </Typography>
           <Typography sx={{ fontWeight: 900, color: "gray" }}>
             Meal Cost
           </Typography>
-          <Divider></Divider>
+          <Divider sx={{width:"150px"}}></Divider>
           <Typography>Meal cost: {data.bajar} tk</Typography>
           <Typography>Coking bill: {data.buyaBill} tk</Typography>
-          <Divider></Divider>
+          <Divider sx={{width:"150px"}}></Divider>
           <Typography>Total cost: {data.bajar + data.buyaBill} tk</Typography>
           <Typography sx={{ fontWeight: 900, color: "gray" }}>
             Utility Cost
           </Typography>
-          <Divider></Divider>
+          <Divider sx={{width:"150px"}}></Divider>
           <Typography>Electricity bill: {data.electricityBill} tk</Typography>
           <Typography>Gas bill: {data.gasBill} tk</Typography>
           <Typography>Water bill: {data.waterBill} tk</Typography>
           <Typography>Paper bill: {data.paperBill} tk</Typography>
           <Typography>Dirt bill: {data.moylaBill} tk</Typography>
           <Typography>Others bill: {data.othersBill} tk</Typography>
-          <Divider></Divider>
+          <Divider sx={{width:"150px"}}></Divider>
           <Typography>Total utility:{data.utilityBill} tk</Typography>
 
           <Typography>Total cost of this month:{data.totalCost} tk</Typography>

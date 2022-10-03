@@ -41,7 +41,11 @@ export default function AddPersonForm() {
             title: "Success",
             text: data,
             icon: "success",
-          });
+          }).then(result => {
+            if (result.isConfirmed) {
+              router.reload(window.location.pathname)
+            }
+          })
         }
       }
     });

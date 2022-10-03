@@ -46,7 +46,8 @@ export default function MealEntryForm({ data }) {
         if (data == "আপনার মিল সঠিকভাবে যুক্ত করা হয়েছে!") {
           Swal.fire("Success", data, "success").then((result) => {
             if (result.isConfirmed) {
-              router.push("/");
+              router.reload(window.location.pathname)
+
             }
           });
         } else {

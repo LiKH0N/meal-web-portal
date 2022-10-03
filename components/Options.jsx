@@ -1,31 +1,30 @@
 import * as React from "react";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import { useRouter } from "next/router";
-import HomeIcon from '@mui/icons-material/Home';
-import PaymentIcon from '@mui/icons-material/Payment';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PaidIcon from '@mui/icons-material/Paid';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import HomeIcon from "@mui/icons-material/Home";
+import PaymentIcon from "@mui/icons-material/Payment";
+import SettingsIcon from "@mui/icons-material/Settings";
+import PaidIcon from "@mui/icons-material/Paid";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import dynamic from "next/dynamic";
 const actions = [
   { icon: <HomeIcon />, link: "/", name: "হোম" },
-  { icon: <SettingsIcon />, link: "/settings", name: "সেটিংস" },
-  { icon: <AttachMoneyIcon />, link: "/others-bill", name: "অন্যান খরচ" },
   {
     icon: <PersonAddIcon />,
     link: "/add-new-person",
-    name: "মেম্বার যুক্ত",
+    name: "মেম্বার",
   },
- 
-  { icon: <PaymentIcon />, link: "/pay-now", name: "টাকা জমা" },
+  { icon: <AttachMoneyIcon />, link: "/others-bill", name: "খরচ" },
+  { icon: <PaymentIcon />, link: "/pay-now", name: "জমা" },
   {
     icon: <PaidIcon />,
     link: "/cost-entry",
     name: "বাজার",
   },
+  { icon: <SettingsIcon />, link: "/settings", name: "সেটিংস" },
 ];
 
 function Options() {
@@ -45,7 +44,6 @@ function Options() {
         bottom: 16,
         right: 16,
         "& .MuiFab-primary": { backgroundColor: "gold", color: "black" },
-        
       }}
       icon={<SpeedDialIcon />}
       onOpen={handleOpen}

@@ -2,7 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import PdfCom from "../components/PdfCom";
 import Loading from "../components/Loading";
-import Layout from "../layout/Layout";
+import PdfLayout from "../layout/PdfLayout";
 import axios from "axios";
 import { useLocalStorage } from "@rehooks/local-storage";
 const getPersonList = (url) => axios.get(url).then((res) => res.data);
@@ -17,14 +17,14 @@ export default function Index() {
 
   if (!data) {
     return (
-      <Layout pageTitle="Loading...">
+      <PdfLayout pageTitle="Loading...">
         <Loading />
-      </Layout>
+      </PdfLayout>
     );
   }
   return (
-    <Layout pageTitle="Meal report">
+    <PdfLayout pageTitle="Meal report">
       <PdfCom data={data} />
-    </Layout>
+    </PdfLayout>
   );
 }

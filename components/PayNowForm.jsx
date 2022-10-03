@@ -44,7 +44,8 @@ export default function PayNowForm({ data }) {
         if (data == "টাকা সঠিকভাবে যুক্ত করা হয়েছে!") {
           Swal.fire("Success", data, "success").then((result) => {
             if (result.isConfirmed) {
-              router.push("/");
+              router.reload(window.location.pathname)
+
             }
           });
         } else {
