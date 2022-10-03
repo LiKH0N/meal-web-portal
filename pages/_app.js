@@ -33,13 +33,10 @@ export default function MyApp(props) {
           <div style={{ textAlign: "center" }}>
             <h2>কিভাবে সিস্টেমটি ব্যবহার করবেন।</h2>
             <iframe
-              width="560"
-              height="315"
               src="https://www.youtube.com/embed/OZapHQmGRko"
-              title="YouTube video player"
+              title="কিভাবে সিস্টেমটি ব্যবহার করবেন।"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowfullscreen="allowfullscreen"
             ></iframe>
           </div>
         </div>
