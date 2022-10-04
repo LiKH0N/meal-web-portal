@@ -1,7 +1,8 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import Head from "next/head";
 import React from "react";
-
+import UserInstruction from "../components/UserInstruction";
+import Author from "../components/Author";
 export default function DashboardLayout({ children, pageTitle }) {
   return (
     <React.Fragment>
@@ -26,6 +27,17 @@ export default function DashboardLayout({ children, pageTitle }) {
         </Container>
       </main>
      
+      <UserInstruction />
+          <div style={{ textAlign: "center", marginTop: "25px" }}>
+            <h2>কিভাবে সিস্টেমটি ব্যবহার করবেন।</h2>
+            <iframe
+              src="https://www.youtube.com/embed/OZapHQmGRko"
+              title="কিভাবে সিস্টেমটি ব্যবহার করবেন।"
+              frameborder="0"
+              allowfullscreen="allowfullscreen"
+            ></iframe>
+            <Author/>
+          </div>
     </React.Fragment>
   );
 }

@@ -21,10 +21,10 @@ export default function UserInstruction() {
       </Typography>
       <Box
         sx={{
-          backgroundImage: "linear-gradient(to right, #F29E12 ,#FFA610)",
+          background:"#F29E12",
           border: "1px solid #E97B0A",
           padding: "13px",
-          borderRadius: "4px",
+          borderRadius: "16px",
         }}
       >
         <Typography

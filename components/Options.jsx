@@ -11,20 +11,24 @@ import PaidIcon from "@mui/icons-material/Paid";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import dynamic from "next/dynamic";
 const actions = [
-  { icon: <HomeIcon />, link: "/", name: "হোম" },
+  { icon: <HomeIcon color="error" />, link: "/", name: "হোম" },
   {
-    icon: <PersonAddIcon />,
+    icon: <PersonAddIcon color="error" />,
     link: "/add-new-person",
     name: "মেম্বার",
   },
-  { icon: <AttachMoneyIcon />, link: "/others-bill", name: "খরচ" },
-  { icon: <PaymentIcon />, link: "/pay-now", name: "জমা" },
   {
-    icon: <PaidIcon />,
+    icon: <AttachMoneyIcon color="error" />,
+    link: "/others-bill",
+    name: "খরচ",
+  },
+  { icon: <PaymentIcon color="error" />, link: "/pay-now", name: "জমা" },
+  {
+    icon: <PaidIcon color="error" />,
     link: "/cost-entry",
     name: "বাজার",
   },
-  { icon: <SettingsIcon />, link: "/settings", name: "সেটিংস" },
+  { icon: <SettingsIcon color="error" />, link: "/settings", name: "সেটিংস" },
 ];
 
 function Options() {
@@ -56,6 +60,12 @@ function Options() {
           icon={action.icon}
           tooltipTitle={action.name}
           tooltipOpen
+          sx={{
+            background: open ? "#F29E12" : null,
+            mb: open ? "3px" : null,
+            border: open ? "1px solid #E97B0A" : null,
+            borderRadius: open ? "12px" : null,
+          }}
           onClick={() => pageChange(action.link)}
         />
       ))}

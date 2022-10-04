@@ -3,6 +3,7 @@ import Head from "next/head";
 import React from "react";
 import Options from "../components/Options";
 import Contact from "../components/Contact";
+import BottomNav from "../components/BottomNav";
 export default function Layout({ children, pageTitle }) {
   return (
     <>
@@ -27,6 +28,7 @@ export default function Layout({ children, pageTitle }) {
     
       </main>
       <Options />
+      {/* <BottomNav/> */}
       <Contact/>
     </>
   );
