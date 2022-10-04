@@ -213,8 +213,9 @@ export default function View({ data }) {
             variant="contained"
             color="btnColor"
             component="a"
+            // disabled={data.mealRate == 0 ? true : false}
           >
-            pdf তৈরী করুন
+            pdf তৈরী করুন {data.mealRate}
           </Button>
         </Link>
       </div>

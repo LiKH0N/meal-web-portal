@@ -85,7 +85,7 @@ export default function PdfCom({ data }) {
                   </TableCell>
                   <TableCell>{row.joma}</TableCell>
                   <TableCell>{row.mealCount}</TableCell>
-                  <TableCell>{data.mealRate.toFixed(2)}</TableCell>
+                  <TableCell>{data.mealRate?data.mealRate.toFixed(2):null}</TableCell>
                   <TableCell>
                     {(row.mealCount * data.mealRate).toFixed(2)}
                   </TableCell>
