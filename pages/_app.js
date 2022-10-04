@@ -9,6 +9,7 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 const clientSideEmotionCache = createEmotionCache();
 import Marquee from "react-fast-marquee";
+import UserInstruction from "../components/UserInstruction";
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
@@ -30,7 +31,9 @@ export default function MyApp(props) {
             সম্পুর্ন ফ্রি!
           </Marquee>
           <Component {...pageProps} />
-          <div style={{ textAlign: "center" }}>
+
+          <UserInstruction />
+          <div style={{ textAlign: "center", marginTop: "25px" }}>
             <h2>কিভাবে সিস্টেমটি ব্যবহার করবেন।</h2>
             <iframe
               src="https://www.youtube.com/embed/OZapHQmGRko"
