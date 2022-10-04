@@ -60,12 +60,12 @@ function Options() {
           icon={action.icon}
           tooltipTitle={action.name}
           tooltipOpen
-          sx={{
-            background: open ? "#F29E12" : null,
-            mb: open ? "3px" : null,
-            border: open ? "1px solid #E97B0A" : null,
-            borderRadius: open ? "12px" : null,
-          }}
+          // sx={{
+          //   background: open ? "#F29E12" : null,
+          //   mb: open ? "3px" : null,
+          //   border: open ? "1px solid #E97B0A" : null,
+          //   borderRadius: open ? "12px" : null,
+          // }}
           onClick={() => pageChange(action.link)}
         />
       ))}

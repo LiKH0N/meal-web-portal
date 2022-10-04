@@ -1,4 +1,4 @@
-import {Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Head from "next/head";
 import React from "react";
 import Options from "../components/Options";
@@ -8,7 +8,9 @@ export default function Layout({ children, pageTitle }) {
   return (
     <>
       <Head>
-        <title>{pageTitle ? pageTitle + " | Meal Web Portal" : "Meal Web Portal"}</title>
+        <title>
+          {pageTitle ? pageTitle + " | Meal Web Portal" : "Meal Web Portal"}
+        </title>
       </Head>
       <main style={{ padding: "0px 10px" }}>
         <Container
@@ -18,18 +20,17 @@ export default function Layout({ children, pageTitle }) {
             p: "20px",
             borderRadius: "10px",
             borderTop: "3px solid #FF9D14",
-            border:"1px soldi #ccc",
+            border: "1px soldi #ccc",
             boxShadow: "0 1px 4px 0 rgb(0 0 0 / 50%)",
-            my: "50px",
+            mt: "10px",
           }}
         >
           {children}
         </Container>
-    
       </main>
       <Options />
-      {/* <BottomNav/> */}
-      <Contact/>
+      {/* <BottomNav /> */}
+      <Contact />
     </>
   );
 }
