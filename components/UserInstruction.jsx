@@ -7,7 +7,7 @@ export default function UserInstruction() {
     <Container maxWidth="md">
       <Box
         sx={{
-          background: "#F29E12",
+          backgroundImage: "linear-gradient(to right, red ,#FFA610)",
           border: "1px solid #E97B0A",
           padding: "13px",
           borderRadius: "4px",
@@ -41,7 +41,9 @@ export default function UserInstruction() {
         হিসাব কমপ্লেট হয়ে গেলে একটি রিপোর্ট ডাউনলোড করে একাউন্ট ডিলিট করে দিতে
         পারেন।<br></br>
         <br></br>
-        একাউন্ট ডিলিট করার পর একি নম্বব দিয়ে পুনরাই নতুন একাউন্ট খুলা যাবে।
+        <span style={{ color: "wheat" }}>
+          একাউন্ট ডিলিট করার পর একি নম্বব দিয়ে পুনরাই নতুন একাউন্ট খুলা যাবে।
+        </span>
         <br></br>
         <br></br>একাউন্ট খুলতে এবং মিলের হিসাব রাখতে নিচের ভিডিওটি দেখুন।
         <br></br>
