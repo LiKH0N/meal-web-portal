@@ -21,7 +21,7 @@ export default function UserInstruction() {
       </Typography>
       <Box
         sx={{
-          backgroundImage: "linear-gradient(to right, #FF4D08 ,#FFA610)",
+          backgroundImage: "linear-gradient(to right, #F29E12 ,#FFA610)",
           border: "1px solid #E97B0A",
           padding: "13px",
           borderRadius: "4px",
