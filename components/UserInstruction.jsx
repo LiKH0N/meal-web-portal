@@ -1,10 +1,24 @@
 import { Container, Typography, Box } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import CountUp from "react-countup";
+import Image from "next/image";
 
 export default function UserInstruction() {
   return (
     <Container maxWidth="md">
+      <Typography textAlign="center">
+        <Image
+          src="/happyUser.png"
+          alt="Happy user"
+          width={50}
+          height={50}
+          quality={100}
+        />
+      </Typography>
+      <Typography textAlign="center" sx={{fontSize:"18px",mb:"10px"}}>
+        Happy User: <CountUp delay={3} end={3157} />
+      </Typography>
       <Box
         sx={{
           backgroundImage: "linear-gradient(to right, red ,#FFA610)",
