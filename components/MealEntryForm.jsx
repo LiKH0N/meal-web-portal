@@ -22,7 +22,7 @@ export default function MealEntryForm({ data }) {
   const router = useRouter()
 
   const [mealUpdate, setMealUpdate] = useState([]);
-  function onClick(evt) {
+  const onClick=(evt)=> {
     setMealUpdate([
       ...mealUpdate,
       { id: evt.target.name, mealCount: evt.target.value },
@@ -99,7 +99,7 @@ export default function MealEntryForm({ data }) {
                     type="number"
                     size="small"
                     name={row.id}
-                    onChange={onClick}
+                    onChange={()=>onClick}
                   />
                 </TableCell>
               </TableRow>

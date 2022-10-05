@@ -115,6 +115,7 @@ export default function View({ data }) {
         <Typography>মোট জমাঃ {data.joma}</Typography>
         <Typography>বাজারঃ {data.bajar}</Typography>
         <Typography>ব্যালেন্সঃ {data.joma - data.bajar}</Typography>
+        <Typography>মোট মিলঃ {data.totalMeal}</Typography>
         <Typography>
           মিল রেটঃ {data.mealRate ? data.mealRate.toFixed(2) : 0}
         </Typography>
@@ -215,7 +216,7 @@ export default function View({ data }) {
             component="a"
             // disabled={data.mealRate == 0 ? true : false}
           >
-            pdf তৈরী করুন {data.mealRate}
+            pdf তৈরী করুন
           </Button>
         </Link>
       </div>

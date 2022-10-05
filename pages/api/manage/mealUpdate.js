@@ -6,7 +6,13 @@ handler.put(async (req, res) => {
     req.body.forEach(async (element) => {
       await prisma.person.updateMany({
         where: { id: element.id },
-        data: { mealCount: { increment: Number(element.mealCount) } },
+        data: {
+          mealCount: {
+            increment: element.mealCount
+              ? Number(element.mealCount)
+              : Number(0),
+          },
+        },
       });
     });
     res.send("আপনার মিল সঠিকভাবে যুক্ত করা হয়েছে!");

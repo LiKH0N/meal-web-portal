@@ -22,11 +22,14 @@ handler.get(async (req, res, next) => {
       mealRate: mealRate,
       bajar: manager.bajar,
       joma: joma,
+      totalMeal: totalMeal,
       buyaBill: manager.buyaBill / manager.persons.length,
       utilityBill:
         (manager.electricityBill +
           manager.gasBill +
           manager.moylaBill +
+          manager.waterBill +
+          manager.paperBill +
           manager.othersBill) /
         manager.persons.length,
       whichMonth: manager.updatedAt,

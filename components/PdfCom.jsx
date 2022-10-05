@@ -110,6 +110,7 @@ export default function PdfCom({ data }) {
           <Divider sx={{width:"150px"}}></Divider>
           <Typography>Total member: {data.persons.length} tk</Typography>
           <Typography>Total collect: {data.joma} tk</Typography>
+          <Typography>Total meal: {data.totalMeal} tk</Typography>
           <Typography>
             Meal rate: {data.mealRate ? data.mealRate.toFixed(2) : 0} tk
           </Typography>

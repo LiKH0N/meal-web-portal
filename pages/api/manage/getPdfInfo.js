@@ -31,6 +31,7 @@ handler.get(async (req, res, next) => {
       buyaBillEachPerson: manager.buyaBill / manager.persons.length,
       utilityBillEachPerson: totalUtilityBill / manager.persons.length,
       buyaBill: manager.buyaBill,
+      totalMeal: totalMeal,
       electricityBill: manager.electricityBill,
       gasBill: manager.gasBill,
       moylaBill: manager.moylaBill,
