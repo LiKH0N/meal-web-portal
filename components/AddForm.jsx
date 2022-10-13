@@ -11,7 +11,6 @@ export default function AddPersonForm() {
   const router=useRouter()
   const addNewPerson = async (e) => {
     e.preventDefault();
-
     Swal.fire({
       title: "আপনি কি সিউর?",
       text: `আপনি কি ${name} কে নতুন মেম্বার হিসাবে যুক্ত করতে চাচ্ছেন`,

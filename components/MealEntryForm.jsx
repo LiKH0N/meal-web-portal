@@ -13,21 +13,27 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 export default function MealEntryForm({ data }) {
   const [open, setOpen] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const [mealUpdate, setMealUpdate] = useState([]);
-  const onClick=(evt)=> {
+  const inputHandler = (evt) => {
     setMealUpdate([
       ...mealUpdate,
       { id: evt.target.name, mealCount: evt.target.value },
     ]);
-  }
+  };
+  const pageRload = (e) => {
+    if (e.key === 'Backspace') {
+      router.reload(window.location.pathname);
+    }
+   
+  };
   async function updateMeal() {
     Swal.fire({
       title: "আপনি কি নিশ্চিত?",
@@ -46,8 +52,7 @@ export default function MealEntryForm({ data }) {
         if (data == "আপনার মিল সঠিকভাবে যুক্ত করা হয়েছে!") {
           Swal.fire("Success", data, "success").then((result) => {
             if (result.isConfirmed) {
-              router.reload(window.location.pathname)
-
+              router.reload(window.location.pathname);
             }
           });
         } else {
@@ -74,6 +79,7 @@ export default function MealEntryForm({ data }) {
         >
           মিল উঠান
         </Typography>
+     
 
         <Divider sx={{ mt: "10px" }}></Divider>
         <Table>
@@ -99,7 +105,8 @@ export default function MealEntryForm({ data }) {
                     type="number"
                     size="small"
                     name={row.id}
-                    onChange={()=>onClick}
+                    onKeyDown={pageRload}
+                    onChange={inputHandler}
                   />
                 </TableCell>
               </TableRow>
@@ -115,7 +122,11 @@ export default function MealEntryForm({ data }) {
           marginTop: "10px",
         }}
       >
-        <Button variant="contained" color="error" onClick={()=>router.push("/")}>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => router.push("/")}
+        >
           বাদ দিন
         </Button>
         <Button variant="contained" color="btnColor" onClick={updateMeal}>
