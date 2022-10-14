@@ -52,7 +52,7 @@ function Options() {
       icon={<SpeedDialIcon />}
       onOpen={handleOpen}
       onClose={handleClose}
-      open={true}
+      open={open}
     >
       {actions.map((action) => (
         <SpeedDialAction
